@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -63,12 +62,6 @@ namespace AKCore
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-#pragma warning disable CS0618 // Type or member is obsolete
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                {
-                    HotModuleReplacement = true
-                });
-#pragma warning restore CS0618 // Type or member is obsolete
             }
             else
             {

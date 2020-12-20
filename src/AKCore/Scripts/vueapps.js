@@ -33,14 +33,9 @@ if ($("#search-widget").length > 0) {
     });
 }
 if ($("#upcoming-app").length > 0) {
-    const upcomingApp = new Vue({
-        el: `#upcoming-app`,
-        data: {
-            eventId
-        },
-        template: "<upcoming-app :event-id='eventId' />",
-        components: { UpcomingApp }
-    });
+    new Vue({
+        render: h => h(UpcomingApp),
+      }).$mount('#upcoming-app')
 }
 
 if ($("#profile-app").length > 0) {
